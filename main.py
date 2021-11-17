@@ -1,31 +1,5 @@
 """
-Display TFT Bonnet Adafruit 1.3"
-Put in /home/"user"/boot/ and change paths
-Add BOOT Image in the same folder or adjust the path
-Use /etc/rc.local to call a bash script that executes this Python code
-(The reason is to facilitate singular modifications)
-
-This code starts after boot, displays the DEFCON logo and then goes to the command interface
-
-The Joystick alone:
-UP = Airdump-NG WEP
-LEFT = Airodump-NG ALL
-RIGHT = MAC Changer
-DOWN = Proxmark3 "auto" scan
-CENTER = Airo-Kill/Screen Alive
-
-A + Joystick
-UP = Bettercap 0/24
-LEFT = Nmap 0/24
-RIGHT = Nmap 1/24
-DOWN = Bettercap 1/24
-CENTER = Screen-Kill
-
-B + Joystick
-UP = Upload
-LEFT = Reboot
-RIGHT = Reset
-DOWN = Shutdown
+POCKET NINJA
 """
 
 
@@ -147,7 +121,7 @@ def tftcontrol():
 
     def up():  # UP Pressed
         up_fill = udlr_fill
-        os.system("sudo /home/kali/boot/scrnup.sh") # Call bash script Screen, to call bash script commands.sh, to execute airodump for WEP recording + variable time/date
+        os.system("sudo /home/kali/boot/Scripts/scrnup.sh") # Call bash script Screen, to call bash script commands.sh, to execute airodump for WEP recording + variable time/date
         clearscreen()
         # Create blank image for drawing.
         # Make sure to create image with mode 'RGB' for full color.
@@ -189,7 +163,7 @@ def tftcontrol():
 
     def left():  # LEFT Pressed
         left_fill = udlr_fill
-        os.system("sudo /home/kali/boot/scrnleft.sh") # Call bash script for NET recording + variable time/date
+        os.system("sudo /home/kali/boot/Scripts/scrnleft.sh") # Call bash script for NET recording + variable time/date
         clearscreen()
         # Create blank image for drawing.
         # Make sure to create image with mode 'RGB' for full color.
@@ -231,7 +205,7 @@ def tftcontrol():
 
     def right():  # RIGHT Pressed
         right_fill = udlr_fill
-        os.system("sudo /home/kali/boot/imgs/right.sh")
+        os.system("sudo /home/kali/boot/Scripts/right.sh")
         clearscreen()
         # Create blank image for drawing.
         # Make sure to create image with mode 'RGB' for full color.
@@ -307,13 +281,13 @@ def tftcontrol():
         disp.image(image)
         time.sleep(5)
 
-        os.system("sudo /home/kali/boot/down.sh")
+        os.system("sudo /home/kali/boot/Scripts/down.sh")
 
         tftcontrol()
 
     def center(): # CENTER Pressed
         center_fill = button_fill
-        os.system("sudo /home/kali/boot/center.sh")
+        os.system("sudo /home/kali/boot/Scripts/center.sh")
 
     def aempty(): # A Pressed
         A_fill = button_fill # Do nothing, to prevent interfering with other commands
@@ -321,7 +295,7 @@ def tftcontrol():
     def aup(): # A + UP
         A_fill = button_fill
         up_fill = udlr_fill
-        os.system("sudo /home/kali/boot/scrnAup.sh") # bettercap 192.168.0.0
+        os.system("sudo /home/kali/boot/Scripts/scrnAup.sh") # bettercap 192.168.0.0
         clearscreen()
         # Create blank image for drawing.
         # Make sure to create image with mode 'RGB' for full color.
@@ -364,7 +338,7 @@ def tftcontrol():
     def aleft(): # A + LEFT
         A_fill = button_fill
         left_fill = udlr_fill
-        os.system("sudo /home/kali/boot/scrnAleft.sh") # nmap 192.168.0.0/24
+        os.system("sudo /home/kali/boot/Scripts/scrnAleft.sh") # nmap 192.168.0.0/24
         clearscreen()
         # Create blank image for drawing.
         # Make sure to create image with mode 'RGB' for full color.
@@ -407,7 +381,7 @@ def tftcontrol():
     def aright(): # A + RIGHT
         A_fill = button_fill
         right_fill = udlr_fill
-        os.system("sudo /home/kali/boot/scrnAright.sh") # nmap 192.168.1.0/24
+        os.system("sudo /home/kali/boot/Scripts/scrnAright.sh") # nmap 192.168.1.0/24
         clearscreen()
         # Create blank image for drawing.
         # Make sure to create image with mode 'RGB' for full color.
@@ -450,7 +424,7 @@ def tftcontrol():
     def adown(): # A + DOWN
         A_fill = button_fill
         down_fill = udlr_fill
-        os.system("sudo /home/kali/boot/scrnAdown.sh") # bettercap 192.168.1.0
+        os.system("sudo /home/kali/boot/Scripts/scrnAdown.sh") # bettercap 192.168.1.0
         clearscreen()
         # Create blank image for drawing.
         # Make sure to create image with mode 'RGB' for full color.
@@ -493,7 +467,7 @@ def tftcontrol():
     def acenter(): # A + CENTER
         A_fill = button_fill
         center_fill = button_fill
-        os.system("sudo /home/kali/boot/acenter.sh")
+        os.system("sudo /home/kali/boot/Scripts/acenter.sh")
 
 
     def bempty(): # B Pressed
@@ -725,7 +699,7 @@ def tftcontrol():
                     bleft()
                 elif not button_R.value:  # B + RIGHT = Reset
                     right_fill = udlr_fill
-                    os.system("sudo /home/kali/boot/reset-tft.sh")  # bash to kill this prog and restart it
+                    os.system("sudo /home/kali/boot/Scripts/reset-tft.sh")  # bash to kill this prog and restart it
                 elif not button_D.value:  # B + DOWN = Shutdown
                     down_fill = udlr_fill
                     bdown()
