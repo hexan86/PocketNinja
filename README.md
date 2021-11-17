@@ -1,14 +1,14 @@
 <h1>PocketNinja</h1>
 
-<h3>This project is intended as a quick interface to simple operations, but also an affordable and easy-to-carry-around tool for different operations.</h3>
+<h3>This project is intended as a quick interface to simple operations, but also an affordable and easy-to-carry-around tool for more complex stuff.</h3>
 
 Based on a Raspberry Pi Zero W, with an <a href="https://github.com/adafruit/Adafruit-1.3in-Color-TFT-Bonnet-PCB">Adafruit TFT Bonnet 1.3" Display</a> and Kali OS (and maybe adding an UPS in the future), PocketNinja aims to help in quick operations, simply using the joystick and the buttons, even in combinations like A+Down or B+Left, and so on.
 
-Coded with Python3, it accesses to the local scripts, getting which one to choose by the controls and using the display to show the proper icon.
+Coded with Python3, it accesses to the local folder "Scripts", getting which one to choose by the Bonnet controls and using the display to show the proper icon.
 For operations like Airodump or Bettercap, it starts them through Screen sessions, to let them operate, instead of die immediatly.
-Also, the Pi Zero is kinda weak and using Screen increases the chances of complete the tasks.
+Also, the Pi Zero W is kinda weak and using Screen increases the chances of complete the tasks.
 
-Keep in mind that it's builted on a scripts base to simplify any change, modifying only the interested script and image, without the need to modify the Main.py
+Keep in mind that it's builted on a scripts-base to simplify any change, modifying only the interested script and image, without the need to modify the Main.py
 
 ![1500x500](https://user-images.githubusercontent.com/25898674/142214044-52a48f16-404d-407e-bc59-ebaa9d2662f4.jpg)
 
