@@ -10,6 +10,8 @@ Also, the Pi Zero is kinda weak and using Screen increases the chances of comple
 
 Keep in mind that it's builted on a scripts base to simplify any change, modifying only the interested script and image, without the need to modify the Main.py
 
+![1500x500](https://user-images.githubusercontent.com/25898674/142214044-52a48f16-404d-407e-bc59-ebaa9d2662f4.jpg)
+
 <h2>Current setup</h2>
 Placed in /home/kali/boot (but you can modify the path as you prefer) and started by a bash script, called from /etc/rc.local after the boot (again, a lot of operations to let any change in an easy way, but remember to adjust every path).
 
